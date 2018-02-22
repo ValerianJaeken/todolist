@@ -23,24 +23,15 @@
         height:70%;
         overflow:scroll;
       }
-      .lowerbox{
-        height:20%;
-        width:400px;
-      }
     </style>
     <div class="container">
-      <div class="lowerBox">
+      <div class="mocheBox">
         <fieldset>
-          <h1>Ajouter une tâche</h1>
+          <h3>A faire</h3>
           <br>
+          <input type="submit" value="Enregistrer">
           <br>
-          <p>La tâche à effectuer</p>
-          <div class="cancerBox">
-            <textarea rows="1" cols="30">
-
-            </textarea>
-            <input type="submit" value="Ajouter">
-          </div>
+          <h3>Archive</h3>
         </fieldset>
       </div>
     </div>
