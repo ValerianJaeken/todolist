@@ -1,5 +1,5 @@
 <?php
-
+  $myJson = 'cancer.json';
 
  ?>
 
@@ -68,7 +68,7 @@
               <h3>A faire</h3>
                 <?php
                   foreach($array_data as $key) {
-                    // var_dump($key);
+
                     echo "<p><input type='checkbox' class='check'>" .$key["message"] ."</input>" ."</p>";
                   }
                  ?>
