@@ -69,7 +69,7 @@
                 <?php
                   foreach($array_data as $key) {
                     // var_dump($key);
-                    echo "<input type='checkbox' class='check'>" .$key["message"] ."</input>" ."<br>";
+                    echo "<p><input type='checkbox' class='check'>" .$key["message"] ."</input>" ."</p>";
                   }
                  ?>
             </div>
@@ -85,6 +85,7 @@
       </div>
     </div>
   </body>
+  <script src="jquery-2.2.4.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="main.js"></script>
 </html>
