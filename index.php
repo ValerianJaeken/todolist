@@ -36,13 +36,28 @@
           <br>
           <p>La tâche à effectuer</p>
           <div class="cancerBox">
-            <textarea rows="1" cols="30">
-
+          <form name="form1" method="POST" action="index.php">
+            <textarea name="message" rows="1" cols="30">
+                <?php
+                  echo $_POST["message"];
+                 ?>
             </textarea>
-            <input type="submit" value="Ajouter">
+            <input type="submit" name="Submit" value="Ajouter">
+          </form>
           </div>
         </fieldset>
       </div>
     </div>
+    <?php
+      if ($_POST['message'] != "") {
+          $_POST['message'] = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
+        if ($_POST['message'] == "") {
+          $errors .= 'Please enter a message to send.<br>';
+        }
+      }
+      else {
+        $errors .= 'Please enter a message to send.<br>';
+      }
+     ?>
   </body>
 </html>
