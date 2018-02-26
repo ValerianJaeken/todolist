@@ -1,0 +1,19 @@
+[{
+  "message": "faire la vaisselle",
+  "fait": true
+}, {
+  "message": "faire la vaisselle",
+  "fait": false
+}, {
+  "message": "jouer \u00e0 fortnite",
+  "fait": false
+}, {
+  "message": "manger des couques",
+  "fait": false
+}, {
+  "message": "faire la lessive",
+  "fait": false
+}, {
+  "message": "jouer \u00e0 fortnite",
+  "fait": false
+}]

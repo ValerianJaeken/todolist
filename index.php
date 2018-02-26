@@ -50,12 +50,12 @@
                   $array_data = json_decode($current_data, true);
                   $extra = array (
                       'message' => $_POST["tache"],
-                      'fait' => 0
+                      'fait' => false
                   );
                   $array_data[] = $extra;
                   $final_data = json_encode($array_data);
                   if (file_put_contents('cancer.json', $final_data)) {
-                    echo "<br>" ."<br>" ."la tâche a bien été ajoutée";
+                    // echo "<br>" ."<br>" ."la tâche a bien été ajoutée";
                   }
                 }
                ?>
@@ -67,16 +67,29 @@
             <div id="todo">
               <h3>A faire</h3>
                 <?php
-                  foreach($array_data as $key) {
-
-                    echo "<p><input type='checkbox' class='check'>" .$key["message"] ."</input>" ."</p>";
+                $data = file_get_contents($myJson);
+                $message = json_decode($data);
+                  foreach($message as $key => $value) {
+                    if ($value->fait == false) {
+                      echo "<p><input type='checkbox' class='check'>" .$value->message ."</p>";
+                    }
                   }
                  ?>
+
             </div>
 
             <div id="archive">
               <h3>Archives</h3>
+                <?php
+                // $data = file_get_contents($myJson);
+                // $message = json_decode($data);
+                foreach($message as $key => $value) {
+                  if ($value->fait == true) {
+                    echo "<p><input checked onclick='return false;' type='checkbox' class='check'>" .$value->message ."</p>";
+                  }
+                }
 
+                 ?>
             </div>
 
           </form>
