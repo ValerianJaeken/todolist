@@ -8,6 +8,7 @@
   <head>
     <meta charset="utf-8">
     <title>ToDoList</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   </head>
   <body>
     <style media="screen">
@@ -104,6 +105,12 @@
         $errors .= 'Please enter a message to send.<br>';
       }
      ?>
+     <?php
+     $(':checkBox').click(function(){
+       var ebola = $(this).closest('div');
+       $('#archive').append(ebola.prev()).append(ebola);
+     });
+      ?>
   </body>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="main.js"></script>
