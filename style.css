@@ -1,23 +1,32 @@
-.cancerBox{
-  width:400px;
-  display: flex;
+
+fieldset{
+  width:100%;
+  max-width:500px;
+  background-color:white;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
 }
 
-.cancerBox input{
-  margin-left:15px;
-}
 
 .container{
-  margin-left:30%;
+  margin-left:35%;
   height:100%;
 }
-
-.mocheBox{
-  width:400px;
-  height:70%;
-  overflow:scroll;
+.lowerBox p{
+  text-align: center;
+  font-style:italic;
+}
+#tache{
+  width:100%;
 }
 
+.ebola{
+  background-color:#fff;
+  padding:5px 10px;
+  border : 1px solid #ddd;
+  width:100%;
+  margin-top:10px;
+}
 .lowerbox{
   height:20%;
   width:400px;
@@ -25,4 +34,22 @@
 
 .done {
   text-decoration: line-through;
+}
+
+#archive{
+  overflow:auto;
+}
+
+body{
+  background-color: #eceff0;
+}
+
+h1{
+  font-family: "Shadow Into Light Two", cursive;
+  margin: 10px 0px 30px 10px;
+  text-align: center;
+}
+body, input{
+  font:1em "Open Sans", sans-serif;
+  color:#363639;
 }

@@ -18,12 +18,6 @@
     $resultat_final = json_encode($json_donnee, JSON_PRETTY_PRINT);
     file_put_contents($myJson,$resultat_final);
   }
-
-
-
-
-
-
  ?>
 
 <!DOCTYPE html>
@@ -32,19 +26,18 @@
     <meta charset="utf-8">
     <title>ToDoList</title>
     <link rel="stylesheet" href="style.css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans|Shadows+Into+Light+Two" rel="stylesheet">﻿
   </head>
   <body>
     <div class="container">
       <div class="lowerBox">
         <fieldset>
           <h1>Ajouter une tâche</h1>
-          <br>
-          <br>
           <p>La tâche à effectuer</p>
           <div class="cancerBox">
             <form action="index.php" method="POST">
-              <input type="text" id="tache" name="tache"> <br>
-              <input type="submit" class="ajout" value="Ajouter">
+              <input type="text" id="tache" name="tache" placeholder="Entrez votre tâche ici"> <br>
+              <input class="ebola" type="submit" class="ajout" value="Ajouter">
               <?php
                 if (isset($_POST["tache"]) && $_POST["tache"] != "") {
                   $current_data = file_get_contents($myJson);
@@ -65,9 +58,9 @@
           </div>
         </fieldset>
         <fieldset>
-          <form class="" action="index.php" method="POST">
+          <form class="sida" action="index.php" method="POST">
             <div id="todo">
-              <h3>A faire</h3>
+              <h1>A faire</h1>
                 <?php
                 $data = file_get_contents($myJson);
                 $message = json_decode($data);
@@ -77,11 +70,11 @@
                     }
                   }
                  ?>
-              <input type="submit" name="send" value="Enregistrer les changements">
+              <input class="ebola" type="submit" name="send" value="Enregistrer les changements">
             </div>
 
             <div id="archive">
-              <h3>Archives</h3>
+              <h1>Archives</h1>
                 <?php
                   // $data = file_get_contents($myJson);
                   // $message = json_decode($data);
