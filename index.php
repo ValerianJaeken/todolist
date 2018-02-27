@@ -18,12 +18,6 @@
     $resultat_final = json_encode($json_donnee, JSON_PRETTY_PRINT);
     file_put_contents($myJson,$resultat_final);
   }
-
-
-
-
-
-
  ?>
 
 <!DOCTYPE html>
