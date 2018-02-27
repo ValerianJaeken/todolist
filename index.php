@@ -1,5 +1,12 @@
 <?php
   $myJson = 'cancer.json';
+  if (isset($_POST['task'])) {
+    echo '<pre>';
+    print_r($_POST);
+    echo '</pre>';
+  }
+
+  file_get_contents()
 
  ?>
 
@@ -8,31 +15,9 @@
   <head>
     <meta charset="utf-8">
     <title>ToDoList</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <style media="screen">
-      .cancerBox{
-        width:400px;
-        display: flex;
-      }
-      .cancerBox input{
-        margin-left:15px;
-      }
-      .container{
-        margin-left:30%;
-        height:100%;
-
-      }
-      .mocheBox{
-        width:400px;
-        height:70%;
-        overflow:scroll;
-      }
-      .lowerbox{
-        height:20%;
-        width:400px;
-      }
-    </style>
     <div class="container">
       <div class="lowerBox">
         <fieldset>
@@ -46,14 +31,15 @@
               <input type="submit" class="ajout" value="Ajouter">
               <?php
                 if (isset($_POST["tache"]) && $_POST["tache"] != "") {
-                  $current_data = file_get_contents('cancer.json');
+                  $current_data = file_get_contents($myJson);
                   $array_data = json_decode($current_data, true);
                   $extra = array (
+                      'id' => time(),
                       'message' => $_POST["tache"],
-                      'fait' => false
+                      'todo' => false
                   );
                   $array_data[] = $extra;
-                  $final_data = json_encode($array_data);
+                  $final_data = json_encode($array_data, JSON_PRETTY_PRINT);
                   if (file_put_contents('cancer.json', $final_data)) {
                     // echo "<br>" ."<br>" ."la tâche a bien été ajoutée";
                   }
@@ -70,26 +56,26 @@
                 $data = file_get_contents($myJson);
                 $message = json_decode($data);
                   foreach($message as $key => $value) {
-                    if ($value->fait == false) {
-                      echo "<p><input type='checkbox' class='check'>" .$value->message ."</p>";
+                    if ($value->todo == false) {
+                      echo '<p><input name="task[]" value="'.$value->id.'" type="checkbox" class="check">' .$value->message .'</p>';
                     }
                   }
                  ?>
-
+              <input type="submit" name="send" value="Enregistrer les changements">
             </div>
 
             <div id="archive">
               <h3>Archives</h3>
                 <?php
-                // $data = file_get_contents($myJson);
-                // $message = json_decode($data);
-                foreach($message as $key => $value) {
-                  if ($value->fait == true) {
-                    echo "<p><input checked onclick='return false;' type='checkbox' class='check'>" .$value->message ."</p>";
+                  // $data = file_get_contents($myJson);
+                  // $message = json_decode($data);
+                  foreach($message as $key => $value) {
+                    if ($value->todo == true) {
+                      echo '<p class="done"><input checked onclick="return false;" type="checkbox" class="check">' .$value->message .'</p>';
+                    }
                   }
-                }
 
-                 ?>
+                ?>
             </div>
 
           </form>

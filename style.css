@@ -1,0 +1,28 @@
+.cancerBox{
+  width:400px;
+  display: flex;
+}
+
+.cancerBox input{
+  margin-left:15px;
+}
+
+.container{
+  margin-left:30%;
+  height:100%;
+}
+
+.mocheBox{
+  width:400px;
+  height:70%;
+  overflow:scroll;
+}
+
+.lowerbox{
+  height:20%;
+  width:400px;
+}
+
+.done {
+  text-decoration: line-through;
+}
