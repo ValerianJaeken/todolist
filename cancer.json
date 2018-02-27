@@ -6,12 +6,22 @@
     },
     {
         "id": 1519721537,
-        "message": "manger des couques",
-        "todo": false
+        "message": "manger des couettes",
+        "todo": 1
     },
     {
         "id": 1519722902,
         "message": "manger des couques",
-        "todo": false
+        "todo": 1
+    },
+    {
+        "id": 1519728403,
+        "message": "jouer \u00e0 fortnite",
+        "todo": 1
+    },
+    {
+        "id": 1519728427,
+        "message": "faire la lessive",
+        "todo": true
     }
 ]

@@ -1,12 +1,28 @@
 <?php
   $myJson = 'cancer.json';
   if (isset($_POST['task'])) {
-    echo '<pre>';
-    print_r($_POST);
-    echo '</pre>';
+
+    $donnee_courante = file_get_contents($myJson);
+    $json_donnee = json_decode($donnee_courante, true);
+
+    foreach ( $json_donnee as $keyJson => $valueJson ) {
+
+      foreach ($_POST['task'] as $keyTask => $valueTask) {
+
+        if ($valueJson['id'] == $valueTask) {
+          $json_donnee[$keyJson]['todo'] = true;
+        }
+
+      }
+    }
+    $resultat_final = json_encode($json_donnee, JSON_PRETTY_PRINT);
+    file_put_contents($myJson,$resultat_final);
   }
 
-  file_get_contents()
+
+
+
+
 
  ?>
 
